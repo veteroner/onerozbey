@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor/tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / temp
+node_modules/
+dist/
+build/
+.tmp/
+*.log
+
+# Local Claude state (not part of the published site)
+.claude/

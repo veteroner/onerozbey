@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Özgeçmiş — Öner Özbey</title>
+    <meta name="description" content="Öner Özbey'in tam özgeçmişi: deneyim, eğitim, beceriler, diller, başarılar." />
+    <meta name="theme-color" content="#8b1d20" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b1d20'/%3E%3Ctext x='50' y='64' font-size='52' font-family='Georgia, serif' fill='white' text-anchor='middle' font-weight='700'%3EÖ%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="cv-page">
+    <header class="site-header no-print">
+      <div class="container nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">ÖÖ</span>
+          <span class="brand-name" data-bind="personal.fullName"></span>
+        </a>
+        <nav class="nav-links" data-bind="nav"></nav>
+        <div class="nav-tools">
+          <button class="icon-btn" id="print-btn" aria-label="Yazdır" title="Yazdır">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="cv-main">
+      <article class="cv-doc container">
+        <header class="cv-header">
+          <div class="cv-id">
+            <div class="cv-photo">
+              <img data-bind-attr="src:personal.photo" alt="" />
+            </div>
+            <div>
+              <p class="eyebrow" data-bind="personal.title"></p>
+              <h1 data-bind="personal.fullName"></h1>
+              <p class="cv-role" data-bind="personal.role"></p>
+            </div>
+          </div>
+          <div class="cv-contact">
+            <dl class="dl">
+              <dt>Doğum</dt><dd data-bind="personal.birth"></dd>
+              <dt>Konum</dt><dd data-bind="personal.location"></dd>
+              <dt>Telefon</dt><dd><a data-bind="personal.phone" data-bind-attr="href:tel:personal.phoneRaw"></a></dd>
+              <dt>E-posta</dt><dd><a data-bind="personal.email" data-bind-attr="href:mailto:personal.email"></a></dd>
+            </dl>
+            <div class="cv-actions no-print">
+              <a class="btn btn-primary" data-bind-attr="href:personal.cvFile" download>PDF indir</a>
+              <button class="btn btn-ghost" id="print-btn-secondary">Yazdır</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="cv-section">
+          <h2>Özet</h2>
+          <div class="prose" data-bind="summary"></div>
+        </section>
+
+        <section class="cv-section">
+          <h2>İş Deneyimi</h2>
+          <ol class="cv-timeline" data-bind="experience"></ol>
+        </section>
+
+        <section class="cv-section cv-grid">
+          <div>
+            <h2>Eğitim</h2>
+            <ul class="education-list" data-bind="education"></ul>
+          </div>
+          <div>
+            <h2>Yabancı Dil</h2>
+            <ul class="lang-list" data-bind="languages"></ul>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <h2>Beceriler</h2>
+          <div class="skills-grid" data-bind="skills"></div>
+        </section>
+
+        <section class="cv-section">
+          <h2>Başarılar</h2>
+          <ul class="achievements" data-bind="achievements"></ul>
+        </section>
+
+        <section class="cv-section">
+          <h2>Çalışma Hayatı</h2>
+          <ul class="working-life" data-bind="workingLife"></ul>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer no-print">
+      <div class="container footer-grid">
+        <div>
+          <p class="brand-name" data-bind="personal.fullName"></p>
+          <p class="muted" data-bind="personal.role"></p>
+        </div>
+        <div class="footer-links">
+          <a data-bind-attr="href:mailto:personal.email" data-bind="personal.email"></a>
+          <a data-bind-attr="href:tel:personal.phoneRaw" data-bind="personal.phone"></a>
+        </div>
+        <p class="muted small">© <span data-bind="site.year"></span> <span data-bind="personal.fullName"></span></p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Öner Özbey — Kişisel Sayfa</title>
+    <meta name="description" content="Öner Özbey — Veteriner Hekim. Hayvancılık politikaları, süt regülasyonu ve afet yönetiminde kamu deneyimi." />
+    <meta name="theme-color" content="#8b1d20" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b1d20'/%3E%3Ctext x='50' y='64' font-size='52' font-family='Georgia, serif' fill='white' text-anchor='middle' font-weight='700'%3EÖ%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">ÖÖ</span>
+          <span class="brand-name" data-bind="personal.fullName">Öner Özbey</span>
+        </a>
+        <nav class="nav-links" data-bind="nav"></nav>
+        <div class="nav-tools">
+          <button class="icon-btn" id="theme-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow" data-bind="personal.title">Veteriner Hekim</p>
+            <h1 data-bind="personal.fullName">Öner Özbey</h1>
+            <p class="hero-role" data-bind="personal.role"></p>
+            <p class="hero-tagline" data-bind="personal.tagline"></p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="cv.html">Özgeçmişi Gör</a>
+              <a class="btn btn-ghost" data-bind-attr="href:personal.cvFile" download>PDF olarak indir</a>
+            </div>
+            <ul class="hero-meta">
+              <li><span class="meta-key">Konum</span><span data-bind="personal.location"></span></li>
+              <li><span class="meta-key">E-posta</span><a data-bind="personal.email" data-bind-attr="href:mailto:personal.email"></a></li>
+              <li><span class="meta-key">Telefon</span><a data-bind="personal.phone" data-bind-attr="href:tel:personal.phoneRaw"></a></li>
+            </ul>
+          </div>
+          <div class="hero-photo">
+            <div class="photo-frame">
+              <img data-bind-attr="src:personal.photo" data-bind-attr-alt="personal.fullName" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container">
+          <ul class="stats" data-bind="highlights"></ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-col">
+          <div>
+            <h2 class="section-title">Hakkımda</h2>
+            <div class="prose" data-bind="summary"></div>
+          </div>
+          <aside class="aside-card">
+            <h3>Hızlı Bilgi</h3>
+            <dl class="dl">
+              <dt>Doğum</dt><dd data-bind="personal.birth"></dd>
+              <dt>Görev</dt><dd data-bind="personal.role"></dd>
+              <dt>Eğitim</dt><dd data-bind="education.0.school"></dd>
+              <dt>E-posta</dt><dd><a data-bind="personal.email" data-bind-attr="href:mailto:personal.email"></a></dd>
+            </dl>
+            <a class="btn btn-primary btn-block" href="cv.html">Tam Özgeçmiş →</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container">
+          <h2 class="section-title">Öne Çıkan Görevler</h2>
+          <ol class="timeline" data-bind="experienceShort"></ol>
+          <p class="section-foot"><a href="cv.html">Tüm deneyim ayrıntıları →</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Başarılar</h2>
+          <ul class="achievements" data-bind="achievements"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="brand-name" data-bind="personal.fullName"></p>
+          <p class="muted" data-bind="personal.role"></p>
+        </div>
+        <div class="footer-links">
+          <a data-bind-attr="href:mailto:personal.email" data-bind="personal.email"></a>
+          <a data-bind-attr="href:tel:personal.phoneRaw" data-bind="personal.phone"></a>
+        </div>
+        <p class="muted small">© <span data-bind="site.year"></span> <span data-bind="personal.fullName"></span></p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

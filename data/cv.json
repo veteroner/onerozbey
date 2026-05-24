@@ -1,0 +1,124 @@
+{
+  "personal": {
+    "fullName": "Öner Özbey",
+    "title": "Veteriner Hekim",
+    "role": "Doğa Koruma ve Milli Parklar Genel Müdürlüğü",
+    "tagline": "Hayvancılık politikaları, süt regülasyonu ve afet yönetiminde 15+ yıllık kamu deneyimi.",
+    "birth": "11.04.1986 — Ankara",
+    "location": "Ankara, Türkiye",
+    "phone": "+90 545 341 01 83",
+    "phoneRaw": "+905453410183",
+    "email": "oner.ozbey@tarimorman.gov.tr",
+    "photo": "assets/img/profile.jpg",
+    "cvFile": "assets/files/oner-ozbey-cv.pdf"
+  },
+  "summary": [
+    "Fırat Üniversitesi Veteriner Fakültesi mezunu (2009). Muş/Varto ve Ankara/Güdül ilçelerinde Veteriner Hekim olarak görev yaptıktan sonra 2016'dan itibaren Hayvancılık Genel Müdürlüğü'nde çeşitli kademelerde görev üstlendi.",
+    "Çiğ süt regülasyonu, hayvancılık desteklemeleri, hayvansal ürün maliyet analizi, deprem afetlerinde yem koordinasyonu ve uluslararası süt zirvelerinin organizasyonu gibi pek çok stratejik çalışmada aktif rol aldı.",
+    "Ocak 2024'ten itibaren Doğa Koruma ve Milli Parklar Genel Müdürlüğü'nde görev yapmaktadır."
+  ],
+  "highlights": [
+    { "value": "15+", "label": "yıl kamu deneyimi" },
+    { "value": "16.000", "label": "ton bedelsiz yem koordinasyonu (2023 depremi)" },
+    { "value": "48.804", "label": "afet bölgesine dağıtılan canlı hayvan" },
+    { "value": "3", "label": "uluslararası süt zirvesi katılım/organizasyon" }
+  ],
+  "experience": [
+    {
+      "title": "Doğa Koruma ve Milli Parklar Genel Müdürlüğü",
+      "period": "Ocak 2024 — Halen",
+      "current": true,
+      "details": []
+    },
+    {
+      "title": "Hayvancılık Genel Müdürlüğü",
+      "period": "Aralık 2016 — Ocak 2024",
+      "details": [
+        "Büyükbaş ve Küçükbaş Hayvancılık Daire Başkanlığı — çiğ süt desteği ve çiğ sütün değerlendirilmesi desteği ülke sorumlusu.",
+        "Büyükbaş Küçükbaş Hayvancılık Daire Başkan Vekili (20 Aralık 2022 — 4 Aralık 2023).",
+        "Süt ürünleri ithalat gözetim uygulaması iş ve işlemlerinin yürütülmesi, yüksek süt eşdeğerine sahip ürünlerin millileştirilmesi.",
+        "2017—2021 çiğ süt piyasası regülasyon çalışmalarının yürütülmesi; fiyat ve piyasa istikrarının korunması.",
+        "Ulusal Süt Konseyi Araştırma Danışma Kurulu Üyeliği (2018—2021).",
+        "Gıda Komitesi Alt Çalışma Grubu — hayvansal ürünler maliyet ve piyasa analizi (2018—2021).",
+        "Proje Geliştirme ve Alt Yapı Daire Başkanlığı, Proje Geliştirme Çalışma Grup Koordinatörlüğü (2022).",
+        "Maliyet İzleme ve Araştırma Komisyon Başkanlığı (2022).",
+        "Ulusal Süt Konseyi Yönetim Kurulu Üyeliği (Temmuz—Eylül 2023).",
+        "Ulusal Süt Konseyi Denetim Kurulu Üyeliği (Eylül 2023 — Mart 2024).",
+        "Bakanlık Afet Müdahale Planı İyileştirme Ekibi Sorumlusu (2023—).",
+        "2023 depreminde AFAD koordinasyonunda yem dağıtımı koordinatörlüğü — 70 ilden bağışlanan 16.000 ton yemin 21 gün boyunca deprem bölgesine ulaştırılması.",
+        "Depremde hayvanları zarar gören yetiştiricilere ayni hayvan desteğinin yürütülmesi — 43.000 küçükbaş ve 5.804 büyükbaş hayvan dağıtım koordinasyonu.",
+        "FAO destekli Hayvancılık İşletmeleri Tipolojisinin Belirlenmesi projesinin başlatılması (2023).",
+        "Hastalıktan ari işletmelerin sayısının artırılmasına yönelik eylem planı taslağının hazırlanması (2023).",
+        "Üretim odaklı, bürokrasiden arınmış yeni hayvancılık destekleme modelinin tasarlanması (2023)."
+      ]
+    },
+    {
+      "title": "Ankara Güdül İlçe Tarım Müdürlüğü",
+      "period": "Haziran 2013 — Aralık 2016",
+      "details": ["Veteriner Hekim."]
+    },
+    {
+      "title": "Muş/Varto İlçe Tarım Müdürlüğü",
+      "period": "Kasım 2009 — Haziran 2013",
+      "details": ["Veteriner Hekim — kamuda ilk görev yeri."]
+    }
+  ],
+  "education": [
+    {
+      "school": "Fırat Üniversitesi — Veteriner Fakültesi",
+      "location": "Elazığ",
+      "period": "2003 — 2009",
+      "degree": "Veteriner Hekim (Lisans)"
+    }
+  ],
+  "skills": [
+    { "group": "Ofis & Üretkenlik", "items": ["Microsoft Office Suite (Word, Excel, PowerPoint)", "Google Docs, Sheets, Slides"] },
+    { "group": "Grafik Tasarım", "items": ["Adobe Photoshop", "Adobe Illustrator"] },
+    { "group": "Veri Analizi", "items": ["Tableau", "Microsoft Power BI"] }
+  ],
+  "languages": [
+    { "name": "Türkçe", "level": "Ana dil", "percent": 100 },
+    { "name": "İngilizce", "level": "Okuma ve konuşma", "percent": 70 },
+    { "name": "Almanca", "level": "Başlangıç düzeyi", "percent": 25 }
+  ],
+  "achievements": [
+    { "year": "2018", "title": "IDF Dünya Süt Zirvesi", "place": "Kore", "role": "Katılımcı" },
+    { "year": "2020", "title": "IDF Dünya Süt Zirvesi", "place": "İstanbul", "role": "Organizasyon" },
+    { "year": "2023", "title": "Cochran Fellowship Program", "place": "ABD", "role": "Training Certificate — hayvan ıslahı, genomik değerlendirme, embriyo transferi, çiftlik yönetimi, hayvan refahı" }
+  ],
+  "workingLife": [
+    "1986 yılında Ankara'da doğdu. İlk, orta ve lise eğitimini Ankara'da tamamladı.",
+    "2009 yılında Fırat Üniversitesi Veteriner Fakültesi'nden mezun oldu.",
+    "Muş İli Varto İlçesinde 2009 yılında memuriyete Veteriner Hekim olarak başladı, ardından Ankara İli Güdül İlçesinde Veteriner Hekim olarak görev yaptı.",
+    "2016 yılında Hayvancılık Genel Müdürlüğü Büyükbaş ve Küçükbaş Hayvancılık Daire Başkanlığında göreve başladı.",
+    "Çiğ süt desteği ve çiğ sütün değerlendirilmesi desteği ülke sorumlusu olarak görev aldı.",
+    "Süt ürünlerinin ithalatına gözetim uygulaması kapsamında iş ve işlemleri yürüttü; yüksek süt eşdeğerine sahip pek çok ürünün millileştirilmesini sağladı.",
+    "2017—2021 yılları arasında çiğ süt piyasasının düzenlenmesine ilişkin süt regülasyonu çalışmalarını yürüttü; fiyat ve piyasa istikrarının korunması yönünde çalışmalar etkin biçimde sürdürüldü.",
+    "2017—2021 yılları arasında çiğ süt desteklemesi ve diğer hayvancılık desteklemelerine yönelik eğiticilerin eğitiminde eğitici olarak görev aldı.",
+    "2017—2021 yılları arasında 4 yıl boyunca Ulusal Süt Konseyi Araştırma Danışma Kurulu Üyeliğinde bulundu.",
+    "2018 yılında Güney Kore'de düzenlenen Dünya Süt Zirvesine katılım sağladı; 2019 yılında ilk defa Ülkemizde düzenlenen Dünya Süt Zirvesinin düzenlenmesinde aktif görev aldı.",
+    "2020 yılında kurulan Bakanlık Dış Kaynaklı Proje İzleme Havuzunda halen görev almaktadır.",
+    "2019—2023 yılları arasında hayvansal ürün maliyetleri ve piyasa analizi konularında Fiyat İstikrar Komitesi ve Gıda Komitesine ilişkin çeşitli çalışmalarda bulundu.",
+    "2020 yılında Çiğ Sütün Sınıflandırılması ve Sığır Karkasının Sınıflandırılmasına yönelik çalışmalarda etkin görev aldı.",
+    "2021 yılında kurulan TBMM Küresel İklim Değişikliği, Kuraklıkla Mücadele ve Su Kaynaklarının Verimli Kullanılması Meclis Araştırması Komisyon Raporuna hayvancılıkla ilgili verilerin oluşturulmasında ve komisyona sunulmasında etkin görev aldı.",
+    "2022 yılında Proje Geliştirme ve Alt yapı Daire Başkanlığında Proje Geliştirme Birim Koordinatörlüğü ve Proje Değerlendirme Komisyonu üyeliğinde bulundu.",
+    "2022 yılında Hayvancılık Genel Müdürlüğü Maliyet İzleme ve Araştırma Komisyon Başkanı olarak görev aldı.",
+    "2023 yılında 11 ilde yaşanan deprem afeti sonrasında AFAD koordinasyonunda kurulan yem dağıtımı koordinatörlüğü görevini üstlendi; 70 ilimizden bağışlarla toplanan 16.000 ton yem 21 gün boyunca deprem bölgesindeki üreticilere teslim edildi.",
+    "2023 yılında depremde hayvanları zarar gören yetiştiricilere ayni hayvan desteğinin başarıyla yürütülmesini sağladı; 43.000 küçükbaş ve 5.804 büyükbaş hayvan dağıtımının idare ve koordinasyonu sağlandı.",
+    "2023 yılında kurulan Bakanlık Afet Müdahale Planı İyileştirme Ekibi Sorumlusu olarak görev almaktadır.",
+    "2023 yılında Ulusal Süt Konseyi Yönetim Kurulu Üyesi olarak görev aldı; Eylül 2023 Genel Kurulunda Denetim Kurulu Üyesi olarak seçildi.",
+    "2023 yılında Hayvancılık İşletmelerinin Tipolojisinin Belirlenmesine yönelik dış kaynaklı FAO projesini başlattı.",
+    "2023 yılında hayvancılık işletmelerinin sınıflandırılması ve kurulmasına yönelik izin/onay işlemlerine ilişkin mevzuat çalışması yürüttü.",
+    "2023 yılında damızlık hayvan ithalatının azaltılmasına yönelik olarak hastalıktan ari işletmelerin sayısının artırılmasına yönelik eylem planı taslağı hazırlayarak çalışmaları başlattı.",
+    "2023 yılında hayvancılık desteklemelerinin etkinleştirilmesine yönelik çalışma başlatarak; sosyal desteklerin yanında üretim odaklı, bürokrasiden arınmış, yönlendirici ve verimlilik esaslı yeni bir destekleme modeli tasarladı.",
+    "Ekim 2023'te Cochran Fellowship Program/ABD kapsamında hayvan ıslahı, genomik değerlendirme, embriyo transferi, sığır sperması üretimi, çiftlik yönetimi, hayvan refahı ve ABD resmi mevzuatları konularında eğitim aldı.",
+    "Evli ve 1 çocuk babasıdır."
+  ],
+  "site": {
+    "year": 2026,
+    "navItems": [
+      { "label": "Anasayfa", "href": "index.html" },
+      { "label": "Özgeçmiş", "href": "cv.html" }
+    ]
+  }
+}
