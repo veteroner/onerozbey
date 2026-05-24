@@ -29,6 +29,7 @@
     </header>
 
     <main>
+      <!-- Hero -->
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-text">
@@ -54,12 +55,14 @@
         </div>
       </section>
 
+      <!-- Sayısal vurgular -->
       <section class="section section-muted">
         <div class="container">
           <ul class="stats" data-bind="highlights"></ul>
         </div>
       </section>
 
+      <!-- Hakkımda + Hızlı bilgi -->
       <section class="section">
         <div class="container two-col">
           <div>
@@ -70,7 +73,7 @@
             <h3>Hızlı Bilgi</h3>
             <dl class="dl">
               <dt>Doğum</dt><dd data-bind="personal.birth"></dd>
-              <dt>Görev</dt><dd data-bind="personal.role"></dd>
+              <dt>Bakanlık</dt><dd data-bind="personal.role"></dd>
               <dt>Eğitim</dt><dd data-bind="education.0.school"></dd>
               <dt>E-posta</dt><dd><a data-bind="personal.email" data-bind-attr="href:mailto:personal.email"></a></dd>
             </dl>
@@ -79,17 +82,35 @@
         </div>
       </section>
 
+      <!-- Uzmanlık Alanları -->
       <section class="section section-muted">
         <div class="container">
-          <h2 class="section-title">Öne Çıkan Görevler</h2>
+          <h2 class="section-title">Uzmanlık Alanları</h2>
+          <div class="expertise-grid" data-bind="expertise"></div>
+        </div>
+      </section>
+
+      <!-- Öne Çıkan Görevler -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">İş Deneyimi</h2>
           <ol class="timeline" data-bind="experienceShort"></ol>
           <p class="section-foot"><a href="cv.html">Tüm deneyim ayrıntıları →</a></p>
         </div>
       </section>
 
+      <!-- Kitap -->
+      <section class="section section-muted">
+        <div class="container">
+          <h2 class="section-title">Yayın</h2>
+          <div class="book-card" data-bind="bookCard"></div>
+        </div>
+      </section>
+
+      <!-- Başarılar -->
       <section class="section">
         <div class="container">
-          <h2 class="section-title">Başarılar</h2>
+          <h2 class="section-title">Başarılar & Etkinlikler</h2>
           <ul class="achievements" data-bind="achievements"></ul>
         </div>
       </section>

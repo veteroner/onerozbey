@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analizler — Öner Özbey</title>
+    <meta name="description" content="Öner Özbey'in hayvancılık sektörüne ilişkin politika analizleri ve araştırmaları." />
+    <meta name="theme-color" content="#8b1d20" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238b1d20'/%3E%3Ctext x='50' y='64' font-size='52' font-family='Georgia, serif' fill='white' text-anchor='middle' font-weight='700'%3EÖ%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">ÖÖ</span>
+          <span class="brand-name" data-bind="personal.fullName"></span>
+        </a>
+        <nav class="nav-links" data-bind="nav"></nav>
+        <div class="nav-tools">
+          <button class="icon-btn" id="theme-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow">Araştırma & Politika</p>
+          <h1 style="margin-bottom:0.3em">Analizler</h1>
+          <p style="max-width:60ch;color:var(--ink-soft);margin-bottom:2.5rem">
+            Türkiye hayvancılık sektörüne ilişkin piyasa, politika ve yapısal analizler. Kırmızı et, süt, destekleme sistemleri ve hayvancılık yönetimi üzerine bağımsız değerlendirmeler bu sayfada yayınlanacaktır.
+          </p>
+
+          <!-- Yakında gelecek analizler için kart alanı -->
+          <div class="analysis-grid" id="analysis-grid">
+            <!-- Analizler buraya JS ile ya da elle eklenecek -->
+          </div>
+
+          <!-- Şimdilik boş-alan mesajı -->
+          <div class="coming-soon-box" id="coming-soon">
+            <div class="coming-soon-icon">📊</div>
+            <h2>Analizler Yayına Hazırlanıyor</h2>
+            <p>Kırmızı et piyasası, çiğ süt fiyatları, hayvancılık destekleme modelleri ve sektör yapısal analizleri yakında bu sayfada yayınlanacak.</p>
+            <p class="muted small">İlk analiz eklendiğinde bu mesaj otomatik olarak kaybolacaktır.</p>
+          </div>
+
+          <!-- Planlanan konu başlıkları -->
+          <div style="margin-top:3rem">
+            <h2 class="section-title">Planlanan Konular</h2>
+            <ul class="topic-list">
+              <li>
+                <span class="topic-icon">🥩</span>
+                <div>
+                  <strong>Kırmızı Et Piyasası Yapısal Analizi</strong>
+                  <p>Türkiye kırmızı et sektöründe fiyat oluşumu, ithalat-ihracat dengesi ve politika etkinliği.</p>
+                </div>
+              </li>
+              <li>
+                <span class="topic-icon">🥛</span>
+                <div>
+                  <strong>Çiğ Süt Fiyat Düzenlemeleri</strong>
+                  <p>Regülasyon uygulamalarının üretici ve işleyici düzeyinde piyasa istikrarına etkisi.</p>
+                </div>
+              </li>
+              <li>
+                <span class="topic-icon">📈</span>
+                <div>
+                  <strong>Hayvancılık Destekleme Sistemleri</strong>
+                  <p>Mevcut destekleme modellerinin etkinliği ve üretim odaklı alternatif model önerileri.</p>
+                </div>
+              </li>
+              <li>
+                <span class="topic-icon">🌍</span>
+                <div>
+                  <strong>Uluslararası Karşılaştırmalı Analizler</strong>
+                  <p>AB, ABD ve gelişmekte olan ülkelerle Türkiye hayvancılık politikalarının karşılaştırması.</p>
+                </div>
+              </li>
+              <li>
+                <span class="topic-icon">🧬</span>
+                <div>
+                  <strong>Damızlık & Genetik Politikaları</strong>
+                  <p>Yerli ıslah programları, hastalıktan ari işletme sistemleri ve ithalat bağımlılığı.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="brand-name" data-bind="personal.fullName"></p>
+          <p class="muted" data-bind="personal.role"></p>
+        </div>
+        <div class="footer-links">
+          <a data-bind-attr="href:mailto:personal.email" data-bind="personal.email"></a>
+          <a data-bind-attr="href:tel:personal.phoneRaw" data-bind="personal.phone"></a>
+        </div>
+        <p class="muted small">© <span data-bind="site.year"></span> <span data-bind="personal.fullName"></span></p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,11 +1,9 @@
 (() => {
   const DATA_URL = "data/cv.json";
 
-  // Resolve a dotted path like "personal.fullName" or "education.0.school" against an object.
   const resolve = (obj, path) =>
     path.split(".").reduce((acc, key) => (acc == null ? acc : acc[key]), obj);
 
-  // Theme handling — persisted in localStorage.
   const initTheme = () => {
     const stored = localStorage.getItem("theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -21,7 +19,6 @@
     }
   };
 
-  // Active-link highlighting based on the current pathname.
   const markActiveLink = () => {
     const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     document.querySelectorAll(".nav-links a").forEach((a) => {
@@ -30,14 +27,12 @@
     });
   };
 
-  // Wire print buttons (works on both pages where they exist).
   const wirePrint = () => {
     document.querySelectorAll("#print-btn, #print-btn-secondary").forEach((b) =>
       b.addEventListener("click", () => window.print())
     );
   };
 
-  // ----- Renderers per data-bind target -----
   const renderers = {
     nav: (el, data) => {
       el.innerHTML = "";
@@ -69,21 +64,62 @@
       });
     },
 
+    expertise: (el, data) => {
+      el.innerHTML = "";
+      (data.expertise || []).forEach((ex) => {
+        const card = document.createElement("div");
+        card.className = "expertise-card";
+        card.innerHTML = `
+          <div class="expertise-icon"></div>
+          <h3 class="expertise-title"></h3>
+          <p class="expertise-desc"></p>
+        `;
+        card.querySelector(".expertise-icon").textContent = ex.icon;
+        card.querySelector(".expertise-title").textContent = ex.title;
+        card.querySelector(".expertise-desc").textContent = ex.desc;
+        el.appendChild(card);
+      });
+    },
+
+    bookCard: (el, data) => {
+      const b = data.book;
+      if (!b) return;
+      el.innerHTML = "";
+      const card = document.createElement("div");
+      card.className = "book-preview-card";
+      card.innerHTML = `
+        <div class="book-preview-cover">
+          <span class="book-preview-icon">📖</span>
+        </div>
+        <div class="book-preview-info">
+          <p class="eyebrow">Yayın — ${b.year || ""}</p>
+          <h3 class="book-preview-title"></h3>
+          <p class="book-preview-author"></p>
+          <p class="book-preview-desc"></p>
+          <div class="book-preview-actions">
+            <a class="btn btn-primary" href="kitap.html">Kitabı Oku →</a>
+            <a class="btn btn-ghost" target="_blank">PDF İndir</a>
+          </div>
+        </div>
+      `;
+      card.querySelector(".book-preview-title").textContent = b.title;
+      card.querySelector(".book-preview-author").textContent = "Yazar: " + (data.personal?.fullName || "");
+      card.querySelector(".book-preview-desc").textContent = b.desc;
+      const dl = card.querySelector(".book-preview-actions a.btn-ghost");
+      dl.href = b.file;
+      dl.setAttribute("download", "");
+      el.appendChild(card);
+    },
+
     experienceShort: (el, data) => {
       el.innerHTML = "";
       (data.experience || []).forEach((job) => {
         const li = document.createElement("li");
-        li.innerHTML = `
-          <div class="tl-period"></div>
-          <div class="tl-title"></div>
-        `;
+        li.innerHTML = `<div class="tl-period"></div><div class="tl-title"></div>`;
         li.querySelector(".tl-period").textContent = job.period;
         const t = li.querySelector(".tl-title");
         t.textContent = job.title;
-        if (job.current) {
-          t.classList.add("is-current");
-          t.textContent += " — Şu an";
-        }
+        if (job.current) t.classList.add("is-current");
         el.appendChild(li);
       });
     },
@@ -110,7 +146,6 @@
         period.textContent = job.period;
         head.appendChild(period);
         li.appendChild(head);
-
         if (job.details && job.details.length) {
           const ul = document.createElement("ul");
           ul.className = "tl-details";
@@ -129,11 +164,7 @@
       el.innerHTML = "";
       (data.education || []).forEach((e) => {
         const li = document.createElement("li");
-        li.innerHTML = `
-          <div class="edu-school"></div>
-          <div class="edu-meta"></div>
-          <div class="edu-degree"></div>
-        `;
+        li.innerHTML = `<div class="edu-school"></div><div class="edu-meta"></div><div class="edu-degree"></div>`;
         li.querySelector(".edu-school").textContent = e.school;
         li.querySelector(".edu-meta").textContent = [e.location, e.period].filter(Boolean).join(" · ");
         li.querySelector(".edu-degree").textContent = e.degree;
@@ -146,17 +177,13 @@
       (data.languages || []).forEach((l) => {
         const li = document.createElement("li");
         li.innerHTML = `
-          <div class="lang-head">
-            <span class="lang-name"></span>
-            <span class="lang-level"></span>
-          </div>
+          <div class="lang-head"><span class="lang-name"></span><span class="lang-level"></span></div>
           <div class="lang-bar"><span></span></div>
         `;
         li.querySelector(".lang-name").textContent = l.name;
         li.querySelector(".lang-level").textContent = l.level;
         const fill = li.querySelector(".lang-bar > span");
-        const pct = Math.max(0, Math.min(100, Number(l.percent) || 0));
-        fill.style.width = pct + "%";
+        fill.style.width = Math.max(0, Math.min(100, Number(l.percent) || 0)) + "%";
         el.appendChild(li);
       });
     },
@@ -208,28 +235,28 @@
     },
   };
 
-  // Apply [data-bind="path"] — set text from a resolved value, or call a named renderer.
   const applyTextBindings = (data) => {
     document.querySelectorAll("[data-bind]").forEach((el) => {
       const key = el.getAttribute("data-bind");
-      if (renderers[key]) {
-        renderers[key](el, data);
-        return;
-      }
+      if (renderers[key]) { renderers[key](el, data); return; }
       const value = resolve(data, key);
       if (value == null) return;
-      if (el.tagName === "A" && !el.hasAttribute("data-keep-href")) {
-        el.textContent = String(value);
-      } else {
-        el.textContent = String(value);
-      }
+      el.textContent = String(value);
     });
   };
 
-  // Apply [data-bind-attr="attr:expr"] — supports plain paths and prefixed values like "mailto:personal.email".
+  const evalExpr = (expr, data) => {
+    const m = expr.match(/^(mailto|tel|https?|sms):(.+)$/);
+    if (m) {
+      const v = resolve(data, m[2]);
+      return v != null ? `${m[1]}:${v}` : "";
+    }
+    const v = resolve(data, expr);
+    return v != null ? String(v) : "";
+  };
+
   const applyAttrBindings = (data) => {
     document.querySelectorAll("[data-bind-attr], [data-bind-attr-alt]").forEach((el) => {
-      // Generic: data-bind-attr="attrName:expr" can repeat by space-separation
       const raw = el.getAttribute("data-bind-attr");
       if (raw) {
         raw.split(/\s+/).forEach((pair) => {
@@ -240,25 +267,12 @@
           el.setAttribute(attr, evalExpr(expr, data));
         });
       }
-      // Convenience alias for alt text
       const altPath = el.getAttribute("data-bind-attr-alt");
       if (altPath) {
         const v = resolve(data, altPath);
         if (v != null) el.setAttribute("alt", String(v));
       }
     });
-  };
-
-  // Expression: either a path ("personal.cvFile") or "prefix:path" (e.g. "mailto:personal.email", "tel:personal.phoneRaw").
-  const evalExpr = (expr, data) => {
-    const m = expr.match(/^(mailto|tel|https?|sms):(.+)$/);
-    if (m) {
-      const prefix = m[1];
-      const v = resolve(data, m[2]);
-      return v != null ? `${prefix}:${v}` : "";
-    }
-    const v = resolve(data, expr);
-    return v != null ? String(v) : "";
   };
 
   const showError = (message) => {
@@ -280,16 +294,12 @@
       applyTextBindings(data);
       applyAttrBindings(data);
       markActiveLink();
-      // Update page title with the person's name once data is available.
-      const name = resolve(data, "personal.fullName");
-      if (name && document.title.includes("—") === false) document.title = `${name} — Kişisel Sayfa`;
     } catch (err) {
       console.error("CV verisi yüklenemedi:", err);
       if (location.protocol === "file:") {
         showError(
-          "Sayfa <code>file://</code> üzerinden açıldığı için JSON verisi okunamıyor. Yerelde " +
-            "test etmek için klasörde basit bir HTTP sunucusu çalıştırın: " +
-            "<code>python3 -m http.server</code> ardından <code>http://localhost:8000</code>"
+          "Sayfa <code>file://</code> üzerinden açıldığı için JSON verisi okunamıyor. " +
+          "Yerelde test etmek için: <code>python3 -m http.server</code>"
         );
       } else {
         showError(err.message || String(err));
